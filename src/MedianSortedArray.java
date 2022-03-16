@@ -17,8 +17,8 @@ class MedianSortedArray {
      * @return
      */
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int x = nums1.length;//2
-        int y = nums2.length;//2
+        int x = nums1.length;
+        int y = nums2.length;
 
         if(x>y) return findMedianSortedArrays(nums2,nums1);
 
@@ -26,11 +26,11 @@ class MedianSortedArray {
 
 
         int start = 0;
-        int end = x;//2
+        int end = x;
 
         while(start<=end){
-            int partitionX = (start+end)/2;//1
-            int partitionY = (x+y)/2 - partitionX;//1
+            int partitionX = (start+end)/2;
+            int partitionY = (x+y)/2 - partitionX;
 
             int xMinIndex = partitionX-1;
             int xMaxIndex = partitionX;
@@ -38,11 +38,11 @@ class MedianSortedArray {
             int yMinIndex = partitionY-1;
             int yMaxIndex = partitionY;
 
-            int xMin = (partitionX==0)?Integer.MIN_VALUE:nums1[xMinIndex];//nusm1[0]=1
-            int xMax = (partitionX==x)?Integer.MAX_VALUE:nums1[xMaxIndex];//nums1[1]=2
+            int xMin = (partitionX==0)?Integer.MIN_VALUE:nums1[xMinIndex];
+            int xMax = (partitionX==x)?Integer.MAX_VALUE:nums1[xMaxIndex];
 
-            int yMin = (partitionY==0)?Integer.MIN_VALUE:nums2[yMinIndex];//3
-            int yMax = (partitionY==y)?Integer.MAX_VALUE:nums2[yMaxIndex];//4
+            int yMin = (partitionY==0)?Integer.MIN_VALUE:nums2[yMinIndex];
+            int yMax = (partitionY==y)?Integer.MAX_VALUE:nums2[yMaxIndex];
 
             if(xMin<=yMax&&yMin<=xMax){
                 if(even){
