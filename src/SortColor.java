@@ -1,4 +1,4 @@
-class SortColor {
+public class SortColor {
 
     /**
      * This method uses dutch national flag algorithm to sort nums of 0,1,2s
